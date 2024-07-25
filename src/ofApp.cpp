@@ -6,6 +6,21 @@ void ofApp::setup() {
   light.setPointLight();
   light.enable();
 
+  ofSetDepthTest(true);
+  ofEnableSmoothing();
+
+  //
+  ofEnableNormalizedTexCoords();
+
+  mercuryImg.load("image/mercury.png");
+  marsImg.load("image/mars.png");
+  jupiterImg.load("image/jupiter.png");
+  venusImg.load("image/venus.png");
+  earthImg.load("image/earth.png");
+  saturnImg.load("image/saturn.png");
+  uranusImg.load("image/uranus.png");
+  neptuneImg.load("image/neptune.png");
+
   mercury = Planet(0.39, 40, ofGetElapsedTimef() * 2.5, ofColor::blue);
   venus = Planet(0.95, 70, ofGetElapsedTimef() * 2, ofColor::yellow);
   earth = Planet(1, 100, ofGetElapsedTimef() * 1.5, ofColor::blue);
@@ -26,10 +41,15 @@ void ofApp::draw() {
   mercury.draw();
   venus.draw();
   earth.draw();
+
+  marsImg.bind();
   mars.draw();
+  marsImg.unbind();
+
   jupiterImg.bind();
   jupiter.draw();
   jupiterImg.unbind();
+
   saturn.draw();
   uranus.draw();
   neptune.draw();

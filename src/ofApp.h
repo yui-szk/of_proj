@@ -26,6 +26,15 @@ class ofApp : public ofBaseApp {
   void dragEvent(ofDragInfo dragInfo) override;
   void gotMessage(ofMessage msg) override;
 
+  ofImage mercuryImg;
+  ofImage venusImg;
+  ofImage earthImg;
+  ofImage marsImg;
+  ofImage jupiterImg;
+  ofImage saturnImg;
+  ofImage uranusImg;
+  ofImage neptuneImg;
+
   Planet mercury;
   Planet venus;
   Planet earth;
