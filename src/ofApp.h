@@ -1,8 +1,13 @@
 #pragma once
 
 #include "ofMain.h"
+#include "planet.h"
 
 class ofApp : public ofBaseApp {
+  ofCamera camera;
+  ofEasyCam cam;
+  ofLight light;
+
  public:
   void setup() override;
   void update() override;
