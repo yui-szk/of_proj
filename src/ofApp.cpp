@@ -33,8 +33,8 @@ void ofApp::update() {
   mars = Planet(0.54, 150, timeCount);
   jupiter = Planet(11, 500, timeCount * 0.3);
   saturn = Planet(9.1, 1000, timeCount * 0.5);
-  uranus = Planet(3.8, 1900, timeCount * 0.7);
-  neptune = Planet(3.9, 3000, timeCount * 0.8);
+  uranus = Planet(3.9, 1900, timeCount * 0.7);
+  neptune = Planet(3.8, 3000, timeCount * 0.8);
 
   timeCount += speed;
 }
