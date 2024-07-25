@@ -1,5 +1,8 @@
 #include "ofApp.h"
 
+float timeCount = 0;
+float speed = 0.01;
+
 //--------------------------------------------------------------
 void ofApp::setup() {
   light.setPosition(0.0f, 0.0f, 0.0f);
@@ -24,14 +27,16 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
-  mercury = Planet(0.39, 40, ofGetElapsedTimef() * 2.5);
-  venus = Planet(0.95, 70, ofGetElapsedTimef() * 2);
-  earth = Planet(1, 100, ofGetElapsedTimef() * 1.5);
-  mars = Planet(0.54, 150, ofGetElapsedTimef());
-  jupiter = Planet(11, 500, ofGetElapsedTimef() * 0.3);
-  saturn = Planet(9.1, 1000, ofGetElapsedTimef() * 0.5);
-  uranus = Planet(3.8, 1900, ofGetElapsedTimef() * 0.7);
-  neptune = Planet(3.9, 3000, ofGetElapsedTimef() * 0.8);
+  mercury = Planet(0.39, 40, timeCount * 2.5);
+  venus = Planet(0.95, 70, timeCount * 2);
+  earth = Planet(1, 100, timeCount * 1.5);
+  mars = Planet(0.54, 150, timeCount);
+  jupiter = Planet(11, 500, timeCount * 0.3);
+  saturn = Planet(9.1, 1000, timeCount * 0.5);
+  uranus = Planet(3.8, 1900, timeCount * 0.7);
+  neptune = Planet(3.9, 3000, timeCount * 0.8);
+
+  timeCount += speed;
 }
 
 //--------------------------------------------------------------
@@ -64,10 +69,18 @@ void ofApp::draw() {
 void ofApp::exit() {}
 
 //--------------------------------------------------------------
-void ofApp::keyPressed(int key) {}
+void ofApp::keyPressed(int key) {
+  if (key == 's') {
+    speed = 0;
+  }
+}
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key) {}
+void ofApp::keyReleased(int key) {
+  if (key == 's') {
+    speed = 0.01;
+  }
+}
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y) {}
