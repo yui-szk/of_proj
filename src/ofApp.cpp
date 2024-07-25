@@ -1,13 +1,20 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup() {}
+void ofApp::setup() {
+  light.setPosition(0.0f, 0.0f, 0.0f);
+  light.setPointLight();
+  light.enable();
+}
 
 //--------------------------------------------------------------
 void ofApp::update() {}
 
 //--------------------------------------------------------------
-void ofApp::draw() {}
+void ofApp::draw() {
+  cam.begin();
+  cam.end();
+}
 
 //--------------------------------------------------------------
 void ofApp::exit() {}
