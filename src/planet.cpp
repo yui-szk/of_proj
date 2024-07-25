@@ -9,6 +9,6 @@ void Planet::draw() {
   x = cos(theta) * (rotateR + sunR);
   z = sin(theta) * (rotateR + sunR);
 
-  ofSetColor(color);
+  ofSetColor(255);
   ofDrawSphere(x, 0, z, planetR * earthR);
 }

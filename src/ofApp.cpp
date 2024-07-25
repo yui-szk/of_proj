@@ -24,14 +24,14 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
-  mercury = Planet(0.39, 40, ofGetElapsedTimef() * 2.5, ofColor::blue);
-  venus = Planet(0.95, 70, ofGetElapsedTimef() * 2, ofColor::yellow);
-  earth = Planet(1, 100, ofGetElapsedTimef() * 1.5, ofColor::blue);
-  mars = Planet(0.54, 150, ofGetElapsedTimef(), ofColor::red);
-  jupiter = Planet(11, 500, ofGetElapsedTimef() * 0.3, ofColor::white);
-  saturn = Planet(9.1, 1000, ofGetElapsedTimef() * 0.5, ofColor::brown);
-  uranus = Planet(3.8, 1900, ofGetElapsedTimef() * 0.7, ofColor::blue);
-  neptune = Planet(3.9, 3000, ofGetElapsedTimef() * 0.8, ofColor::blue);
+  mercury = Planet(0.39, 40, ofGetElapsedTimef() * 2.5);
+  venus = Planet(0.95, 70, ofGetElapsedTimef() * 2);
+  earth = Planet(1, 100, ofGetElapsedTimef() * 1.5);
+  mars = Planet(0.54, 150, ofGetElapsedTimef());
+  jupiter = Planet(11, 500, ofGetElapsedTimef() * 0.3);
+  saturn = Planet(9.1, 1000, ofGetElapsedTimef() * 0.5);
+  uranus = Planet(3.8, 1900, ofGetElapsedTimef() * 0.7);
+  neptune = Planet(3.9, 3000, ofGetElapsedTimef() * 0.8);
 }
 
 //--------------------------------------------------------------
