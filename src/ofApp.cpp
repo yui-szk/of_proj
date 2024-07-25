@@ -20,7 +20,10 @@ void ofApp::setup() {
   saturnImg.load("image/saturn.png");
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
+}
 
+//--------------------------------------------------------------
+void ofApp::update() {
   mercury = Planet(0.39, 40, ofGetElapsedTimef() * 2.5, ofColor::blue);
   venus = Planet(0.95, 70, ofGetElapsedTimef() * 2, ofColor::yellow);
   earth = Planet(1, 100, ofGetElapsedTimef() * 1.5, ofColor::blue);
@@ -30,9 +33,6 @@ void ofApp::setup() {
   uranus = Planet(3.8, 1900, ofGetElapsedTimef() * 0.7, ofColor::blue);
   neptune = Planet(3.9, 3000, ofGetElapsedTimef() * 0.8, ofColor::blue);
 }
-
-//--------------------------------------------------------------
-void ofApp::update() {}
 
 //--------------------------------------------------------------
 void ofApp::draw() {
