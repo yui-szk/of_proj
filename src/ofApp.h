@@ -4,7 +4,6 @@
 #include "planet.h"
 
 class ofApp : public ofBaseApp {
-  ofCamera camera;
   ofEasyCam cam;
   ofLight light;
 
@@ -26,4 +25,13 @@ class ofApp : public ofBaseApp {
   void windowResized(int w, int h) override;
   void dragEvent(ofDragInfo dragInfo) override;
   void gotMessage(ofMessage msg) override;
+
+  Planet mercury;
+  Planet venus;
+  Planet earth;
+  Planet mars;
+  Planet jupiter;
+  Planet saturn;
+  Planet uranus;
+  Planet neptune;
 };
