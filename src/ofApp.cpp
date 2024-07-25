@@ -43,9 +43,17 @@ void ofApp::update() {
 void ofApp::draw() {
   cam.begin();
 
+  mercuryImg.bind();
   mercury.draw();
+  mercuryImg.unbind();
+
+  venusImg.bind();
   venus.draw();
+  venusImg.unbind();
+
+  earthImg.bind();
   earth.draw();
+  earthImg.unbind();
 
   marsImg.bind();
   mars.draw();
@@ -55,9 +63,17 @@ void ofApp::draw() {
   jupiter.draw();
   jupiterImg.unbind();
 
+  saturnImg.bind();
   saturn.draw();
+  saturnImg.unbind();
+
+  uranusImg.bind();
   uranus.draw();
+  uranusImg.unbind();
+
+  neptuneImg.bind();
   neptune.draw();
+  neptuneImg.unbind();
 
   ofSetColor(255);
   ofDrawSphere(0, 0, 100);
