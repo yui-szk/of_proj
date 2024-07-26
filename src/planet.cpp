@@ -15,9 +15,9 @@ void Planet::draw() {
   // ofRotateDeg(deg);
 
   ofSetColor(255);
-  // jupiterImg.bind();
+  texture.bind();
   ofDrawSphere(x, 0, z, planetR * earthR);
-  // jupiterImg.unbind();
+  texture.unbind();
 
   // deg += 1;
   // ofPopMatrix();

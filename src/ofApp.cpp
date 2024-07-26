@@ -63,14 +63,14 @@ void ofApp::update() {
   sun.setEmissiveColor(sunColor);
   stars.setEmissiveColor(spaceColor);
 
-  mercury = Planet(0.39, 40, timeCount * 1.606);
-  venus = Planet(0.95, 70, timeCount * 1.176);
-  earth = Planet(1, 100, timeCount);
-  mars = Planet(0.54, 150, timeCount * 0.810);
-  jupiter = Planet(11, 500, timeCount * 0.439);
-  saturn = Planet(9.1, 1000, timeCount * 0.324);
-  uranus = Planet(3.9, 1900, timeCount * 0.228);
-  neptune = Planet(3.8, 3000, timeCount * 0.182);
+  mercury = Planet(0.39, 40, timeCount * 1.606, mercuryImg);
+  venus = Planet(0.95, 70, timeCount * 1.176, marsImg);
+  earth = Planet(1, 100, timeCount, earthImg);
+  mars = Planet(0.54, 150, timeCount * 0.810, venusImg);
+  jupiter = Planet(11, 500, timeCount * 0.439, jupiterImg);
+  saturn = Planet(9.1, 1000, timeCount * 0.324, saturnImg);
+  uranus = Planet(3.9, 1900, timeCount * 0.228, uranusImg);
+  neptune = Planet(3.8, 3000, timeCount * 0.182, neptuneImg);
 
   timeCount += speed;
   deg += 0.1;
@@ -81,37 +81,14 @@ void ofApp::draw() {
   cam.begin();
   ofEnableDepthTest();
 
-  mercuryImg.bind();
   mercury.draw();
-  mercuryImg.unbind();
-
-  venusImg.bind();
   venus.draw();
-  venusImg.unbind();
-
-  earthImg.bind();
   earth.draw();
-  earthImg.unbind();
-
-  marsImg.bind();
   mars.draw();
-  marsImg.unbind();
-
-  jupiterImg.bind();
   jupiter.draw();
-  jupiterImg.unbind();
-
-  saturnImg.bind();
   saturn.draw();
-  saturnImg.unbind();
-
-  uranusImg.bind();
   uranus.draw();
-  uranusImg.unbind();
-
-  neptuneImg.bind();
   neptune.draw();
-  neptuneImg.unbind();
 
   sun.begin();
   sunImg.bind();
