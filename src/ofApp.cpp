@@ -4,6 +4,7 @@ float timeCount = 0;
 
 float deg = 0;
 
+ofSoundPlayer backMusic;
 ofColor sunColor;
 
 //--------------------------------------------------------------
@@ -50,6 +51,10 @@ void ofApp::setup() {
   gui.setup();
   gui.add(speed.setup("speed", 0.01, 0, 0.2));
   gui.add(lightBtn.setup("light"));
+
+  backMusic.load("space.mp3");
+  backMusic.setLoop(true);
+  backMusic.play();
 }
 
 //--------------------------------------------------------------
@@ -137,6 +142,13 @@ void ofApp::keyPressed(int key) {
   if (key == 's') {
     speed = 0;
   }
+  if (key == 'm') {
+    if (backMusic.getIsPlaying()) {
+      backMusic.stop();
+    } else {
+      backMusic.play();
+    }
+  }
 }
 
 //--------------------------------------------------------------
@@ -182,4 +194,5 @@ void ofApp::dragEvent(ofDragInfo dragInfo) {}
 // TODO: 衛星の追加
 // TODO: 各惑星にカメラがフォーカスできるようにする
 // TODO: 軌跡の追加
+// TODO: 音楽を止めた時点から再再生されるようにする
 // TODO: 物理演算を追加して、シミュレーション化
