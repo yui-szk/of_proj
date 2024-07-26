@@ -48,6 +48,7 @@ class ofApp : public ofBaseApp {
   ofImage saturnImg;
   ofImage uranusImg;
   ofImage neptuneImg;
+  ofImage spaceImg;
 
   Planet mercury;
   Planet venus;

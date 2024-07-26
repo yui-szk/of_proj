@@ -1,7 +1,6 @@
 #include "ofApp.h"
 
 float timeCount = 0;
-
 float deg = 0;
 
 ofSoundPlayer backMusic;
@@ -43,8 +42,9 @@ void ofApp::setup() {
   saturnImg.load("image/saturn.png");
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
+  spaceImg.load("image/space.png");
 
-  space.loadModel("space.obj");
+  // space.load("space.obj");
 
   lightBtn.addListener(this, &ofApp::lightCon);
 
@@ -54,12 +54,15 @@ void ofApp::setup() {
 
   backMusic.load("space.mp3");
   backMusic.setLoop(true);
-  backMusic.play();
+  // backMusic.play();
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
+  ofColor spaceColor(150, 150, 150, 0.1);
+
   sun.setEmissiveColor(sunColor);
+  stars.setEmissiveColor(spaceColor);
 
   mercury = Planet(0.39, 40, timeCount * 1.606);
   venus = Planet(0.95, 70, timeCount * 1.176);
@@ -114,13 +117,18 @@ void ofApp::draw() {
   sun.begin();
   sunImg.bind();
   ofSetColor(255);
-  ofDrawSphere(0, 0, 100);
+  ofDrawSphere(0, 0, 0, 100);
   sunImg.unbind();
   sun.end();
 
-  space.setScale(10, 10, 10);
-  space.setPosition(0, 0, 0);
-  space.drawFaces();
+  stars.begin();
+  spaceImg.bind();
+  // space.setScale(50, 50, 50);
+  // space.setPosition(0, 0, 0);
+  // space.drawFaces();
+  ofDrawSphere(0, 0, 0, 4500);
+  spaceImg.unbind();
+  stars.end();
 
   ofDisableDepthTest();
   cam.end();
