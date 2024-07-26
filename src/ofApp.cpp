@@ -44,7 +44,7 @@ void ofApp::setup() {
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
 
-  stars.setEmissiveColor(255);
+  space.loadModel("space.obj");
 
   lightBtn.addListener(this, &ofApp::lightCon);
 
@@ -118,11 +118,9 @@ void ofApp::draw() {
   sunImg.unbind();
   sun.end();
 
-  // stars.begin();
-  // jupiterImg.bind();
-  // ofDrawSphere(0, 0, 10000);
-  // jupiterImg.unbind();
-  // stars.end();
+  space.setScale(10, 10, 10);
+  space.setPosition(0, 0, 0);
+  space.drawFaces();
 
   ofDisableDepthTest();
   cam.end();

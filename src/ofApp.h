@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxAssimpModelLoader.h"
 #include "ofxGui.h"
 #include "planet.h"
 
@@ -32,6 +33,8 @@ class ofApp : public ofBaseApp {
   ofxPanel gui;
   ofxFloatSlider speed;
   ofxButton lightBtn;
+
+  ofxAssimpModelLoader space;
 
   ofMaterial sun;
   ofMaterial stars;
