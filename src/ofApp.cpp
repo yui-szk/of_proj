@@ -2,12 +2,21 @@
 
 float timeCount = 0;
 
+float deg = 0;
+
+ofColor sunColor;
+
 //--------------------------------------------------------------
 void ofApp::lightCon() {
+  ofColor sunBlightColor(255, 240, 200);
+  ofColor sunDarkColor(0, 0, 0);
+
   if (light.getIsEnabled()) {
     light.disable();
+    sunColor = sunDarkColor;
   } else {
     light.enable();
+    sunColor = sunBlightColor;
   }
 }
 
@@ -24,6 +33,7 @@ void ofApp::setup() {
   //
   ofEnableNormalizedTexCoords();
 
+  sunImg.load("image/sun.png");
   mercuryImg.load("image/mercury.png");
   marsImg.load("image/mars.png");
   jupiterImg.load("image/jupiter.png");
@@ -33,8 +43,6 @@ void ofApp::setup() {
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
 
-  ofColor sunColor(255, 240, 230);
-  sun.setEmissiveColor(sunColor);
   stars.setEmissiveColor(255);
 
   lightBtn.addListener(this, &ofApp::lightCon);
@@ -46,6 +54,8 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
+  sun.setEmissiveColor(sunColor);
+
   mercury = Planet(0.39, 40, timeCount * 1.606);
   venus = Planet(0.95, 70, timeCount * 1.176);
   earth = Planet(1, 100, timeCount);
@@ -56,6 +66,7 @@ void ofApp::update() {
   neptune = Planet(3.8, 3000, timeCount * 0.182);
 
   timeCount += speed;
+  deg += 0.1;
 }
 
 //--------------------------------------------------------------
@@ -96,22 +107,26 @@ void ofApp::draw() {
   neptuneImg.unbind();
 
   sun.begin();
+  sunImg.bind();
   ofSetColor(255);
   ofDrawSphere(0, 0, 100);
+  sunImg.unbind();
   sun.end();
 
-  //   stars.begin();
-  //   jupiterImg.bind(2);
-  //   ofDrawSphere(0, 0, 10000);
-  //   jupiterImg.unbind();
-  //   stars.end();
+  // stars.begin();
+  // jupiterImg.bind();
+  // ofDrawSphere(0, 0, 10000);
+  // jupiterImg.unbind();
+  // stars.end();
 
   ofDisableDepthTest();
   cam.end();
 
-  // glDisable(GL_LIGHTING);
-  // glDisable(GL_DEPTH_TEST);
+  glDisable(GL_LIGHTING);
+  glDisable(GL_DEPTH_TEST);
   gui.draw();
+  glEnable(GL_LIGHTING);
+  glEnable(GL_DEPTH_TEST);
 }
 
 //--------------------------------------------------------------

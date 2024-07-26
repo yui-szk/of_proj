@@ -36,6 +36,7 @@ class ofApp : public ofBaseApp {
   ofMaterial sun;
   ofMaterial stars;
 
+  ofImage sunImg;
   ofImage mercuryImg;
   ofImage venusImg;
   ofImage earthImg;
