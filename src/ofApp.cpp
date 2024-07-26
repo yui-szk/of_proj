@@ -36,9 +36,9 @@ void ofApp::setup() {
   sunImg.load("image/sun.png");
   mercuryImg.load("image/mercury.png");
   marsImg.load("image/mars.png");
-  jupiterImg.load("image/jupiter.png");
-  venusImg.load("image/venus.png");
   earthImg.load("image/earth.png");
+  venusImg.load("image/venus.png");
+  jupiterImg.load("image/jupiter.png");
   saturnImg.load("image/saturn.png");
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
