@@ -141,7 +141,7 @@ void ofApp::keyPressed(int key) {
     speed = 0;
   }
   if (key == 'm') {
-    if (backMusic.getIsPlaying()) {
+    if (backMusic.isPlaying()) {
       backMusic.stop();
     } else {
       backMusic.play();
