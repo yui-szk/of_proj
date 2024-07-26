@@ -1,5 +1,6 @@
 #include "planet.h"
 
+// void Planet::setup() { jupiterImg.load("image/jupiter.png"); }
 void Planet::update() {}
 void Planet::draw() {
   float x, z;
@@ -9,6 +10,15 @@ void Planet::draw() {
   x = cos(theta) * (rotateR + sunR);
   z = sin(theta) * (rotateR + sunR);
 
+  // ofPushMatrix();
+  // ofTranslate(x, 0, z);
+  // ofRotateDeg(deg);
+
   ofSetColor(255);
-  ofDrawSphere(x, 0, z, planetR * earthR);
+  // jupiterImg.bind();
+  ofDrawSphere(0, 0, 0, planetR * earthR);
+  // jupiterImg.unbind();
+
+  // deg += 1;
+  // ofPopMatrix();
 }
