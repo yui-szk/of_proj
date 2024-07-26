@@ -33,7 +33,8 @@ void ofApp::setup() {
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
 
-  sun.setEmissiveColor(255);
+  ofColor sunColor(255, 240, 230);
+  sun.setEmissiveColor(sunColor);
   stars.setEmissiveColor(255);
 
   lightBtn.addListener(this, &ofApp::lightCon);
