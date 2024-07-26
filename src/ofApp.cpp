@@ -175,3 +175,11 @@ void ofApp::gotMessage(ofMessage msg) {}
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo) {}
+
+// TODO: 土星に輪（Noise）を追加
+// TODO: 周囲に星空の背景（球）
+// TODO: 自転させる
+// TODO: 衛星の追加
+// TODO: 各惑星にカメラがフォーカスできるようにする
+// TODO: 軌跡の追加
+// TODO: 物理演算を追加して、シミュレーション化
