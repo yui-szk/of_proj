@@ -1,7 +1,6 @@
 #include "ofApp.h"
 
 float timeCount = 0;
-float speed = 0.01;
 
 //--------------------------------------------------------------
 void ofApp::setup() {
@@ -28,6 +27,9 @@ void ofApp::setup() {
 
   sun.setEmissiveColor(255);
   stars.setEmissiveColor(255);
+
+  gui.setup();
+  gui.add(speed.setup("speed", 0.01, 0, 0.1));
 }
 
 //--------------------------------------------------------------
@@ -47,6 +49,7 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
   cam.begin();
+  ofEnableDepthTest();
 
   mercuryImg.bind();
   mercury.draw();
@@ -91,7 +94,12 @@ void ofApp::draw() {
   //   jupiterImg.unbind();
   //   stars.end();
 
+  ofDisableDepthTest();
   cam.end();
+
+  glDisable(GL_LIGHTING);
+  glDisable(GL_DEPTH_TEST);
+  gui.draw();
 }
 
 //--------------------------------------------------------------

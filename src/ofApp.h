@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
 #include "planet.h"
 
 class ofApp : public ofBaseApp {
@@ -25,6 +26,9 @@ class ofApp : public ofBaseApp {
   void windowResized(int w, int h) override;
   void dragEvent(ofDragInfo dragInfo) override;
   void gotMessage(ofMessage msg) override;
+
+  ofxPanel gui;
+  ofxFloatSlider speed;
 
   ofMaterial sun;
   ofMaterial stars;
