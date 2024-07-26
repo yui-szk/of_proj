@@ -54,7 +54,6 @@ void ofApp::setup() {
 
   backMusic.load("space.mp3");
   backMusic.setLoop(true);
-  // backMusic.play();
 }
 
 //--------------------------------------------------------------
