@@ -16,7 +16,7 @@ void Planet::draw() {
 
   ofSetColor(255);
   // jupiterImg.bind();
-  ofDrawSphere(0, 0, 0, planetR * earthR);
+  ofDrawSphere(x, 0, z, planetR * earthR);
   // jupiterImg.unbind();
 
   // deg += 1;
