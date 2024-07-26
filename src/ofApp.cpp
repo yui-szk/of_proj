@@ -27,19 +27,19 @@ void ofApp::setup() {
   neptuneImg.load("image/neptune.png");
 
   sun.setEmissiveColor(255);
-  stars.setEmissiveColor(0);
+  stars.setEmissiveColor(255);
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-  mercury = Planet(0.39, 40, timeCount * 2.5);
-  venus = Planet(0.95, 70, timeCount * 2);
-  earth = Planet(1, 100, timeCount * 1.5);
-  mars = Planet(0.54, 150, timeCount);
-  jupiter = Planet(11, 500, timeCount * 0.3);
-  saturn = Planet(9.1, 1000, timeCount * 0.5);
-  uranus = Planet(3.9, 1900, timeCount * 0.7);
-  neptune = Planet(3.8, 3000, timeCount * 0.8);
+  mercury = Planet(0.39, 40, timeCount * 1.606);
+  venus = Planet(0.95, 70, timeCount * 1.176);
+  earth = Planet(1, 100, timeCount);
+  mars = Planet(0.54, 150, timeCount * 0.810);
+  jupiter = Planet(11, 500, timeCount * 0.439);
+  saturn = Planet(9.1, 1000, timeCount * 0.324);
+  uranus = Planet(3.9, 1900, timeCount * 0.228);
+  neptune = Planet(3.8, 3000, timeCount * 0.182);
 
   timeCount += speed;
 }
