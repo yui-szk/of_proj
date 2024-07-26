@@ -27,6 +27,7 @@ class ofApp : public ofBaseApp {
   void gotMessage(ofMessage msg) override;
 
   ofMaterial sun;
+  ofMaterial stars;
 
   ofImage mercuryImg;
   ofImage venusImg;

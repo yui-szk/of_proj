@@ -5,6 +5,8 @@ float speed = 0.01;
 
 //--------------------------------------------------------------
 void ofApp::setup() {
+  cam.setVFlip(true);
+
   light.setPosition(0.0f, 0.0f, 0.0f);
   light.setPointLight();
   light.enable();
@@ -25,6 +27,7 @@ void ofApp::setup() {
   neptuneImg.load("image/neptune.png");
 
   sun.setEmissiveColor(255);
+  stars.setEmissiveColor(0);
 }
 
 //--------------------------------------------------------------
@@ -81,6 +84,12 @@ void ofApp::draw() {
   ofSetColor(255);
   ofDrawSphere(0, 0, 100);
   sun.end();
+
+  //   stars.begin();
+  //   jupiterImg.bind(2);
+  //   ofDrawSphere(0, 0, 10000);
+  //   jupiterImg.unbind();
+  //   stars.end();
 
   cam.end();
 }
