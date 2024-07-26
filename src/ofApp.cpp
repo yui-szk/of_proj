@@ -3,6 +3,14 @@
 float timeCount = 0;
 
 //--------------------------------------------------------------
+void ofApp::lightCon() {
+  if (light.getIsEnabled()) {
+    light.disable();
+  } else {
+    light.enable();
+  }
+}
+
 void ofApp::setup() {
   cam.setVFlip(true);
 
@@ -28,8 +36,11 @@ void ofApp::setup() {
   sun.setEmissiveColor(255);
   stars.setEmissiveColor(255);
 
+  lightBtn.addListener(this, &ofApp::lightCon);
+
   gui.setup();
-  gui.add(speed.setup("speed", 0.01, 0, 0.1));
+  gui.add(speed.setup("speed", 0.01, 0, 0.2));
+  gui.add(lightBtn.setup("light"));
 }
 
 //--------------------------------------------------------------
@@ -97,8 +108,8 @@ void ofApp::draw() {
   ofDisableDepthTest();
   cam.end();
 
-  glDisable(GL_LIGHTING);
-  glDisable(GL_DEPTH_TEST);
+  // glDisable(GL_LIGHTING);
+  // glDisable(GL_DEPTH_TEST);
   gui.draw();
 }
 

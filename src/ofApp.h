@@ -27,8 +27,11 @@ class ofApp : public ofBaseApp {
   void dragEvent(ofDragInfo dragInfo) override;
   void gotMessage(ofMessage msg) override;
 
+  void lightCon();
+
   ofxPanel gui;
   ofxFloatSlider speed;
+  ofxButton lightBtn;
 
   ofMaterial sun;
   ofMaterial stars;
