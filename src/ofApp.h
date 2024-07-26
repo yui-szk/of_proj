@@ -26,6 +26,8 @@ class ofApp : public ofBaseApp {
   void dragEvent(ofDragInfo dragInfo) override;
   void gotMessage(ofMessage msg) override;
 
+  ofMaterial sun;
+
   ofImage mercuryImg;
   ofImage venusImg;
   ofImage earthImg;

@@ -23,6 +23,8 @@ void ofApp::setup() {
   saturnImg.load("image/saturn.png");
   uranusImg.load("image/uranus.png");
   neptuneImg.load("image/neptune.png");
+
+  sun.setEmissiveColor(255);
 }
 
 //--------------------------------------------------------------
@@ -75,8 +77,10 @@ void ofApp::draw() {
   neptune.draw();
   neptuneImg.unbind();
 
+  sun.begin();
   ofSetColor(255);
   ofDrawSphere(0, 0, 100);
+  sun.end();
 
   cam.end();
 }
